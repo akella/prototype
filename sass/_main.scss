@@ -1,0 +1,133 @@
+.content{
+	background: #F2F2F4;
+	&.content_main{
+		box-shadow:inset 0 15px 15px -15px rgba(#000, .1);
+	}
+	&.content_white{
+		background: #fff;
+	}
+	.content__in{
+		@extend %in;
+		padding: 40px 0;
+	}
+}
+.hentry{
+	margin-bottom: 22px;
+	padding-bottom: 22px;
+	border-bottom: 1px solid #D6D8DC;
+	.hentry__title{
+		font-size: 23px;
+		color: #2d3746;
+		text-decoration: none;
+		font-weight: normal;
+		line-height: 1.2;
+		margin-bottom: 10px;
+		@include frank;
+		a{
+			color: #2d3746;
+			text-decoration: none;
+		}
+	}
+	&.hentry_inactive{
+		.hentry__title{
+			a{
+				color: #aaafb6;
+			}
+		}
+	}
+	.hentry__meta{
+		color: #aaafb6;
+		font-size: 11px;
+	}
+	.hentry__pic{
+		margin-top: 22px;
+		img{
+			display: block;
+		}
+	}
+	.hentry__content{
+		font-size: 13px;
+		color: #828791;
+		line-height: 1.5;
+		margin-top: 22px;
+		p{
+			margin-bottom: 1em;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	&.hentry_white{
+		background: #fff;
+		padding: 20px 28px 28px 28px;
+		border-bottom: none;
+		margin-bottom: 45px;
+		.hentry__title{
+			font-size: 27px;
+		}
+		.hentry__pic{
+			margin: 22px -28px -28px -28px;
+		}
+	}
+	&.hentry_wide{
+		margin-bottom: 42px;
+		border-bottom-style: none;
+		padding-bottom: 0;
+		.hentry__title{
+			font-size: 39px;
+			margin-bottom: 20px;
+			line-height: 1.1;
+		}
+	}
+	&.hentry_last{
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+}
+.cols{
+	margin-right: -50px;
+	overflow: hidden;
+	.col{
+		width: 320px;
+		float: left;
+		margin-right: 40px;
+	}
+}
+
+.promoted{
+	background: #fff;
+	position: relative;
+	.promoted__in{
+		@extend %in;
+		padding: 40px 0;
+	}
+	.promoted__toggle{
+		position: absolute;
+		right: 40px;
+		bottom: 40px;
+		@include s(promotedarrow);
+		cursor: pointer;
+	}
+}
+.promoted_entry{
+	overflow: hidden;
+	text-decoration: none;
+	display: block;
+	.promoted__pic{
+		float: right;
+		margin-left: 100px;
+	}
+	.promoted__title{
+		@include frank;
+		color: #696e78;
+		font-size: 27px;
+		text-decoration: none;
+		line-height: 1.2;
+	}
+	.promoted__date{
+		margin-top: 20px;
+		color: #aaafb6;
+		font-size: 11px;
+	}
+}
+
