@@ -6,6 +6,13 @@ $(document).ready(function() {
 		$('body').toggleClass('is-reading')
 	});
 	$('.promoted__toggle').click(function (e) {
-		$('.promoted').slideToggle();
+		$('.promoted').toggleClass('is-collapsed');
+	});
+
+	$('.site').click(function (e) {
+		e.stopPropagation();
+	});
+	$('.sites').click(function (e) {
+		$(this).addClass('is-expanded');
 	});
 });

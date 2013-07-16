@@ -5,17 +5,26 @@
 		list-style: none;
 		margin-right: -60px;
 	}
+	.sites__toggle{
+		position: absolute;
+		bottom: 0;
+		height: 100px;
+		cursor: pointer;
+		width: 100%;
+		z-index: 10;
+	}
 	.sites__in{
 		@extend %in;
 		height: 320px;
 		overflow: hidden;
 		margin-right: -60px;
 		@include transition(all .3s ease-in-out);
+		position: relative;
 		
 	}
-	&:hover{
+	&.is-expanded{
 		.sites__in{
-			height: 500px;
+			height: 900px;
 		}
 	}
 	.site{
@@ -32,6 +41,10 @@
 		@include frank();
 		line-height: 1.2;
 		position: relative;
+		&:hover{
+			background: #fafafa;
+			color: darken(#697891, 20%);
+		}
 		span{
 			display: block;
 			position: absolute;

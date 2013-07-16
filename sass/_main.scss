@@ -97,6 +97,9 @@
 .promoted{
 	background: #fff;
 	position: relative;
+	height: 180px;
+	@include transition(all .3s linear);
+	overflow: hidden;
 	.promoted__in{
 		@extend %in;
 		padding: 40px 0;
@@ -108,8 +111,18 @@
 		@include s(promotedarrow);
 		cursor: pointer;
 	}
+	&.is-collapsed{
+		height: 60px;
+		.promoted__in{
+			padding: 0;
+		}
+		.promoted__toggle{
+			bottom: 25px;
+			@include rotate(180);
+		}
+	}
 }
-.promoted_entry{
+.promoted__entry{
 	overflow: hidden;
 	text-decoration: none;
 	display: block;
@@ -123,11 +136,35 @@
 		font-size: 27px;
 		text-decoration: none;
 		line-height: 1.2;
+		font-weight: normal;
 	}
 	.promoted__date{
 		margin-top: 20px;
 		color: #aaafb6;
 		font-size: 11px;
+	}
+	.is-collapsed &{
+		position: relative;
+		.promoted__pic{
+			display: none;
+		}
+		.promoted__date{
+			font-size: 11px;
+			color: #aaafb6;
+			margin: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 60px;
+			line-height: 60px;
+
+		}
+		.promoted__title{
+			color: #a0afc3;
+			font-size: 18px;
+			height: 60px;
+			line-height: 60px;
+		}
 	}
 }
 
