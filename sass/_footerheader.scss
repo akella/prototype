@@ -53,6 +53,9 @@ body{
 			top: 13px;
 			display: inline-block;
 			@include s(orel);
+			@include r(wide){
+				left: -56px + 20px;
+			}
 		}
 	}
 	.topline__nav{

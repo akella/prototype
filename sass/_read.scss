@@ -1,46 +1,6 @@
-.is-reading{
-	overflow: hidden;
-	@include r(wide){
-		overflow: auto;
-	}
-}
-.read__wrap{
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	overflow: auto;
-	z-index: 200;
-	display: none;
-	.is-reading &{
-		display: block;
-	}
-	@include r(wide){
-		left: 900px;
-		overflow: auto;
-		position: absolute;
-		bottom: auto;
-	}
-}
-.read__overlay{
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	z-index: 2;
-}
 .read{
 	background: #fff;
 	box-shadow:0 0 15px rgba(#000, .4);
-	width: 760px;
-	margin: 20px auto 50px auto;
-	position: relative;
-	z-index: 10;
-	@include r(wide){
-		margin-top: 100px;
-	}
 	.read__top{
 		background: #E8E8EC;
 		height: 60px;
@@ -110,6 +70,10 @@
 	}
 	.slider{
 		margin: 0 -40px;
+		img{
+			display: block;
+			width: 100%;
+		}
 	}
 	blockquote{
 		float: right;

@@ -73,35 +73,32 @@ a img,fieldset{
 @mixin frank(){
 	font-family: "franklingothicdemicmpcregular","arial narrow",sans-serif;
 }
-%in{
-	width: 680px;
-	margin-left: 200px;
-}
 
-%wyswyg{
-	p{
-		margin-bottom: 1em;
-	}
-	ul,ol{
-		margin: 1em 2em;
-		list-style: disc;
-	}
-	ol{
-		list-style: decimal;
-	}
-	blockquote{
-		margin: 1em 2em;
-	}
-	table{
-		border-spacing: 0;
-		border-collapse: collapse;
-		width: 100%;
-		td{
-			border: 1px solid #ccc;
-			padding: 5px;
-		}
-	}
-}
+
+// %wyswyg{
+// 	p{
+// 		margin-bottom: 1em;
+// 	}
+// 	ul,ol{
+// 		margin: 1em 2em;
+// 		list-style: disc;
+// 	}
+// 	ol{
+// 		list-style: decimal;
+// 	}
+// 	blockquote{
+// 		margin: 1em 2em;
+// 	}
+// 	table{
+// 		border-spacing: 0;
+// 		border-collapse: collapse;
+// 		width: 100%;
+// 		td{
+// 			border: 1px solid #ccc;
+// 			padding: 5px;
+// 		}
+// 	}
+// }
 
 
 

@@ -1,14 +1,80 @@
-// default layout
-.l{
-	width: 100%;
-	display: inline-block;
-	.l-col1{
-		float:left;
-		width: 20%;
-	}
+// all the layout magic is here
 
-	.l-col2{
-		float:right;
-		width: 70%;
+// site layout
+%in{
+	width: 680px;
+	margin-left: 120px;
+	@include r(med){
+		margin: 0 auto;
+	}
+	@include r(wide){
+		margin-left: 40px; 
+	}
+}
+
+
+
+
+// reader layout
+.is-reading{
+	overflow: hidden;
+	@include r(wide){
+		overflow: auto;
+	}
+}
+.read__wrap{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	height: auto;
+	right: 0;
+	left: 0;
+	overflow: auto;
+	z-index: 200;
+	display: none;
+	@include r(notwide){
+		height: auto !important;
+		top: 0 !important;
+	}
+	.is-reading &{
+		display: block;
+	}
+	@include r(wide){
+		left: 760px;
+		right: 40px;
+		//overflow: auto;
+		position: absolute;
+		bottom: auto;
+
+		overflow: visible;
+		//set via js
+		top: 200px;
+		bottom: 100px;
+		overflow: auto;
+	}
+}
+.read__overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+}
+.read{
+	width: 680px;
+	//margin: 20px auto 50px auto;
+	position: relative;
+	z-index: 10;
+	min-width: 560px;
+	max-width: 760px;
+	margin-left: 120px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	@include r(med){
+		margin: 0 auto;
+	}
+	@include r(wide){
+		width: auto;
 	}
 }
