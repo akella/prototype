@@ -1,6 +1,14 @@
+.read__wrap{
+	@include r(wide){
+		box-shadow:0 0 15px rgba(#000, .4);
+	}
+}
 .read{
 	background: #fff;
 	box-shadow:0 0 15px rgba(#000, .4);
+	@include r(wide){
+		box-shadow:none;
+	}
 	.read__top{
 		background: #E8E8EC;
 		height: 60px;

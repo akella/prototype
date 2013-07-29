@@ -10,7 +10,8 @@
 .is-reading .read__wrap { display: block; }
 @media only screen and (min-width: 1360px) { .read__wrap { left: 760px; right: 40px; position: absolute; bottom: auto; overflow: visible; top: 200px; bottom: 100px; overflow: auto; } }
 
-.read__overlay { position: absolute; top: 0; left: 0; bottom: 0; right: 0; z-index: 2; }
+.read__overlay { position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 2; }
+@media only screen and (min-width: 1360px) { .read__overlay { display: none; } }
 
 .read { width: 680px; position: relative; z-index: 10; min-width: 560px; max-width: 760px; margin-left: 120px; margin-top: 10px; margin-bottom: 10px; }
 @media only screen and (min-width: 920px) { .read { margin: 0 auto; } }
@@ -132,7 +133,10 @@ body.is-withsidebar .topline { top: -60px; }
 .is-collapsed .promoted__entry .promoted__date { font-size: 11px; color: #aaafb6; margin: 0; position: absolute; right: 0; top: 0; height: 60px; line-height: 60px; }
 .is-collapsed .promoted__entry .promoted__title { color: #a0afc3; font-size: 18px; height: 60px; line-height: 60px; }
 
+@media only screen and (min-width: 1360px) { .read__wrap { box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); } }
+
 .read { background: #fff; box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); }
+@media only screen and (min-width: 1360px) { .read { box-shadow: none; } }
 .read .read__top { background: #E8E8EC; height: 60px; }
 .read .read__top * { display: none; }
 .read .read__updated { position: absolute; bottom: -30px; right: 17px; font-size: 11px; color: #aaafb6; }

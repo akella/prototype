@@ -38,41 +38,60 @@ $(document).ready(function() {
 
 
 	function setpopup(){
-		curpos = $(window).scrollTop(); //current screen scroll from top
-		wh = $(window).height(); //window height
+		if(body.hasClass('is-wide')){
+			curpos = $(window).scrollTop(); //current screen scroll from top
+			wh = $(window).height(); //window height
 
-		newheight = 300;
-		//determine top and height
-			if(curpos < topareah ){
-				newtop = topareah + margintop;
-				newheight = wh - newtop + curpos - marginbot;
-				//console.log(newheight);
-			}
-			else{
-				newtop = curpos + margintop;
-				newheight = wh - newtop + curpos - marginbot;
-			}
-			// we are at bottom
-			if(curpos+wh  + 30> fTop){
-				newheight = fTop - curpos - marginbot - margintop - 30;
-			}
-		// set
+			newheight = 300;
+			//determine top and height
+				if(curpos < topareah ){
+					newtop = topareah + margintop;
+					newheight = wh - newtop + curpos - marginbot;
+					//console.log(newheight);
+				}
+				else{
+					newtop = curpos + margintop;
+					newheight = wh - newtop + curpos - marginbot;
+				}
+				// we are at bottom
+				if(curpos+wh  + 30> fTop){
+					newheight = fTop - curpos - marginbot - margintop - 30;
+				}
+			// set
+		}
+		else{
+			newtop = 0;
+			newheight = 'auto';
+		}
 		readwrap.css("top",newtop);
 		readwrap.css("height",newheight);
+
+	}
+
+
+	function setwideclass(){
+		if($(window).width()>1360){
+			body.addClass('is-wide');
+		}
+		else{
+			body.removeClass('is-wide');
+		}
 	}
 
 
 
-
-
-
 	// all of this for wide screen only
+	setwideclass();
 	setpopup();
 	$(window).scroll(function () {
+		setwideclass();
 		setpopup();
+
 	});
 	$(window).resize(function() {
+		setwideclass();
 		setpopup();
+
 	});
 
 });
