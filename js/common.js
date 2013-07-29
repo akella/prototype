@@ -54,8 +54,8 @@ $(document).ready(function() {
 					newheight = wh - newtop + curpos - marginbot;
 				}
 				// we are at bottom
-				if(curpos+wh  + 30> fTop){
-					newheight = fTop - curpos - marginbot - margintop - 30;
+				if(curpos+wh  - 20> fTop){
+					newheight = fTop - curpos - marginbot - margintop + 20;
 				}
 			// set
 		}
