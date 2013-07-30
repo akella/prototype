@@ -5,12 +5,12 @@
 .is-reading { overflow: hidden; }
 @media only screen and (min-width: 1360px) { .is-reading { overflow: auto; } }
 
-.read__wrap { position: fixed; top: 0; bottom: 0; height: auto; right: 0; left: 0; overflow: auto; z-index: 200; display: none; }
-@media only screen and (max-width: 1360px) { .read__wrap { height: auto !important; top: 0 !important; } }
+.read__wrap { position: fixed; top: 100px; bottom: 0; height: auto; right: 0; left: 0; overflow: auto; z-index: 200; display: none; }
+@media only screen and (max-width: 1360px) { .read__wrap { height: auto !important; top: 100px !important; } }
 .is-reading .read__wrap { display: block; }
 @media only screen and (min-width: 1360px) { .read__wrap { left: 760px; right: 40px; position: absolute; bottom: auto; overflow: visible; top: 200px; bottom: 100px; overflow: auto; } }
 
-.read__overlay { position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 2; }
+.read__overlay { position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 2; background: rgba(0, 0, 0, 0.5); }
 @media only screen and (min-width: 1360px) { .read__overlay { display: none; } }
 
 .read { width: 680px; position: relative; z-index: 10; min-width: 560px; max-width: 760px; margin-left: 120px; margin-top: 10px; margin-bottom: 10px; }

@@ -24,7 +24,7 @@
 }
 .read__wrap{
 	position: fixed;
-	top: 0;
+	top: 100px;
 	bottom: 0;
 	height: auto;
 	right: 0;
@@ -34,7 +34,7 @@
 	display: none;
 	@include r(notwide){
 		height: auto !important;
-		top: 0 !important;
+		top: 100px !important;
 	}
 	.is-reading &{
 		display: block;
@@ -60,6 +60,7 @@
 	bottom: 0;
 	right: 0;
 	z-index: 2;
+	background: rgba(#000, .5);
 	@include r(wide){
 		display: none;
 	}
