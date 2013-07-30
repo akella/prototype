@@ -51,7 +51,7 @@ a img, fieldset { border: none; }
 .sidenav .sidenav__content { padding: 75px 40px 20px 40px; width: 240px; position: fixed; position: absolute; top: 0; z-index: 50; left: 0; }
 .sidenav .sidenav__content.is-fixed { position: fixed; top: 0 !important; }
 .sidenav .sidenav__content.is-static { position: absolute; }
-.sidenav .sidenav__top { height: 60px; background: #091B30; background: red; position: fixed; top: 0; left: 0; z-index: 100; width: 320px; }
+.sidenav .sidenav__top { height: 60px; background: #091B30; position: fixed; top: 0; left: 0; z-index: 100; width: 320px; }
 .sidenav .sidenav__bg { width: 320px; background: #091B30; position: fixed; top: 0; left: 0; bottom: 0; }
 .sidenav h3 { font-family: "franklingothicdemicmpcregular","arial narrow",sans-serif; color: #a0afc3; font-size: 19px; font-weight: normal; margin-bottom: 28px; }
 .sidenav .sidenav__main { list-style: none; font-size: 16px; margin-bottom: 30px; }
