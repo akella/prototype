@@ -1,6 +1,7 @@
 .read__wrap{
 	@include r(wide){
 		box-shadow:0 0 15px rgba(#000, .4);
+		background: #fff;
 	}
 }
 .read{
@@ -22,6 +23,10 @@
 		right: 17px;
 		font-size: 11px;
 		color: #aaafb6;
+		@include r(wide){
+			padding-bottom: 15px;
+			bottom: 0;
+		}
 	}
 	.read__in{
 		padding: 25px 40px;

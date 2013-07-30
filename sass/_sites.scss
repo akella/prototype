@@ -17,7 +17,7 @@
 		@extend %in;
 		height: 320px;
 		overflow: hidden;
-		margin-right: -60px;
+		//margin-right: -60px;
 		@include transition(all .3s ease-in-out);
 		position: relative;
 		
