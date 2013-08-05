@@ -1,10 +1,12 @@
 $(document).ready(function() {
 
 	$('.hentry,.read__overlay').click(function (e) {
-		$('body').toggleClass('is-reading')
+		$('body').toggleClass('is-reading');
 	});
 	$('.promoted__toggle').click(function (e) {
-		$('.promoted').toggleClass('is-collapsed');
+		$('.promoted').toggleClass('is-collapsed').afterTransition(function(){
+			setpopup();
+		});
 	});
 
 	$('.site').click(function (e) {
@@ -15,7 +17,7 @@ $(document).ready(function() {
 	});
 
 
-// lets have fun with scroll, oh dear
+	// lets have fun with scroll, oh dear
 	//elements
 	readwrap = $('.read__wrap');
 	header = $('.topline');
@@ -35,28 +37,40 @@ $(document).ready(function() {
 	marginbot = 10;
 	topareah = hh + ph;
 
-
+	// ===============================================================
+	// ===========================READ================================
+	// ===============================================================
 	function setpopup(){
 		if(body.hasClass('is-wide')){
 			curpos = $(window).scrollTop(); //current screen scroll from top
 			wh = $(window).height(); //window height
 
 			newheight = 300;
-			//determine top and height
-				if(curpos < topareah ){
+			if($('.promoted').hasClass('is-collapsed')){
+				topareah = 120;
+			}
+			else{
+				topareah = 240;
+			}
+				//determine top and height
+				if(curpos < topareah ){ // we are at top
 					newtop = topareah + margintop;
 					newheight = wh - newtop + curpos - marginbot;
+					newtop = topareah + margintop - curpos;
 					//console.log(newheight);
+
 				}
-				else{
+				else{ // at middle
 					newtop = curpos + margintop;
 					newheight = wh - newtop + curpos - marginbot;
+					newtop = header + margintop;
 				}
 				// we are at bottom
 				if(curpos+wh  - 20> fTop){
 					newheight = fTop - curpos - marginbot - margintop + 20;
 				}
 			// set
+			
 		}
 		else{
 			newtop = 0;
@@ -64,9 +78,15 @@ $(document).ready(function() {
 		}
 		readwrap.css("top",newtop);
 		readwrap.css("height",newheight);
-
 	}
-
+	// prevent scroll of a page
+	$( '.scrollable' ).
+    bind( 'mousewheel DOMMouseScroll', function (e) {
+        var delta = e.wheelDelta || -e.detail || e.originalEvent.wheelDelta;
+        this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+        console.log(delta);
+        e.preventDefault();
+    });
 
 	function setwideclass(){
 		if($(window).width()>1360){
@@ -79,10 +99,24 @@ $(document).ready(function() {
 
 
 
+	
+
+	
+
+
+	// ==================================================================
+	// ===========================SIDENAV================================
+	// ==================================================================
+	$('.topline__toggleaside,.sidenav__toggle').click(function (e) {
+		$('body').toggleClass('is-withsidebar');
+		curpos = $(window).scrollTop();
+		if(curpos>0){
+			side.css('top', curpos).removeClass('is-fixed');
+		}
+	});
 	//sidebar fixed
 	(function () {
 		var previousScroll = 0;
-
 		$(window).scroll(function(){
 		   var currentScroll = $(this).scrollTop();
 		   if(currentScroll>100){
@@ -104,6 +138,7 @@ $(document).ready(function() {
 		});
 	}()); //run this anonymous function immediately
 
+
 	// all of this for wide screen only
 	setwideclass();
 	setpopup();
@@ -116,11 +151,4 @@ $(document).ready(function() {
 		setpopup();
 	});
 
-	$('.topline__toggleaside,.sidenav__toggle').click(function (e) {
-		$('body').toggleClass('is-withsidebar');
-		curpos = $(window).scrollTop();
-		if(curpos>0){
-			side.css('top', curpos).removeClass('is-fixed');
-		}
-	});
 });

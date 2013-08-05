@@ -14,7 +14,103 @@
 		background: #E8E8EC;
 		height: 60px;
 		*{
-			display: none;
+			float: left;
+		}
+		i{
+			display: inline-block;
+			position: relative;
+			font-style: normal;
+		}
+		span{
+			position: absolute;
+			right: -8px;
+			top: -4px;
+			width: 16px;
+			height: 12px;
+			line-height: 12px;
+			font-size: 8px;
+			font-family: Arial,sans-serif;
+			color: #fff;
+			border-radius: 10px;
+			background: #696E77;
+			text-align: center;
+			border: 2px solid #E3E4E8;
+		}
+		.read__loadarticle{
+			cursor: pointer;
+			height: 40px;
+			padding: 20px 30px 0 30px;
+			margin-left: 10px;
+			i{
+				@include s(icon-article);
+			}
+			&:hover, &:active, &.is-active{
+				i{
+					@include s(icon-articlea);
+				}
+			}
+		}
+		.read__loadphoto{
+			position: relative;
+			cursor: pointer;
+			height: 40px;
+			padding: 20px 30px 0 30px;
+			i{
+				@include s(icon-photo);
+			}
+			&:hover, &:active, &.is-active{
+				i{
+					@include s(icon-photoa);
+				}
+			}
+			
+		}
+		.read__loadvideo{ 
+			position: relative;
+			cursor: pointer;
+			height: 40px;
+			padding: 20px 30px 0 30px;
+			i{
+				@include s(icon-video);
+			}
+			&:hover, &:active, &.is-active{
+				i{
+					@include s(icon-videoa);	
+				}
+			}
+		}
+		.read__loadvideo, .read__loadphoto, .read__loadarticle{
+			&.is-active{
+				position: relative;
+				&:before{
+					position: absolute;
+					bottom: 0;
+					@include s(read-active);
+					left: 50%;
+					margin-left: -11px;
+					content: ' ';
+				}
+			}
+		}
+		.read__share{
+			float: right;
+			cursor: pointer;
+			height: 40px;
+			padding: 20px 20px 0 20px;
+			i{
+				@include s(icon-share);
+			}
+			&:hover, &:active, &.is-active{
+				i{
+					@include s(icon-sharea);
+				}
+			}
+		}
+		.read__sep{
+			position: relative;
+			top: 16px;
+			height: 28px;
+			border-left: 1px solid #D6D8DC;
 		}
 	}
 	.read__updated{
@@ -69,7 +165,7 @@
 		font-weight: normal;
 		line-height: 1.1;
 		margin-bottom: 23px;
-		@include frank;
+		@include reg;
 	}
 	p{
 		margin-bottom: 1.5em;

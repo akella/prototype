@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width"/>
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 	<script src="js/jquery.js"></script>
+	<script src="js/transition-events.js"></script>
 	<script src="js/common.js"></script>
 </head>
 <body>
@@ -15,21 +16,21 @@
 	<div class="sidenav__bg"></div>
 	
 	<div class="sidenav__content">
+		<ul class="sidenav__pre">
+			<li><a href="#" class="sidenav__special"><i></i>Версия для людей с ограниченными возможностями</a></li>
+			<li><a href="#">English</a></li>
+		</ul>
 		<h3>Структура информационного портала Президента России</h3>
 		<ul class="sidenav__main">
-			<li><a class="is-active" href="#">Президент России</a></li>
-			<li><a href="#">Структуры при Президенте России</a></li>
-			<li><a href="#">Конституция России</a></li>
-			<li><a href="#">Государственная символика</a></li>
-			<li><a href="#">Прием обращений граждан России</a></li>
-			<li><a href="#">Президент России — гражданам школьного возраста</a></li>
-			<li><a href="#">Виртуальный тур по Кремлю</a></li>
-			<li><a href="#">Владимир Путин — личный сайт</a></li>
+			<li><a href='#'>Президент России <span>Текущий ресурс</span></a></li>
+			<li><a href='#'>Конституция России</a></li>
+			<li><a href='#'>Государственная символика</a></li>
+			<li><a href='#'>Прием обращений граждан России</a></li>
+			<li><a href='#'>Президент России — <br>гражданам школьного <br>возраста</a></li>
+			<li><a href='#'>Виртуальный тур по Кремлю</a></li>
+			<li><a href='#'>Владимир Путин — личный <br>сайт</a></li>
 		</ul>
-		<ul class="sidenav__subnav">
-			<li><a href="#">Версия для людей с ограниченными возможностями</a></li>
-			<li><a href="#">Мобильная версия</a></li>
-			<li><a href="#">English</a></li>
+		<ul class="sidenav__other">
 			<li><a href="#">Канал на Youtube</a></li>
 			<li><a href="#">Официальный Твиттер</a></li>
 		</ul>
@@ -223,8 +224,8 @@
 	<div class="sites__in">
 		<div class="sites__toggle"></div>
 		<ul>
-			<li><a href="#" class="site">Правительство
-Российской Федерации <span>GOVERMENT.RU</span></a></li>
+			<li><a href="#" class="site site_withbg" style="background:url(img/site.jpg);">Правительство
+Российской Федерации <span>GOVERMENT.RU</span><div class="site__arrow"></div></a></li>
 			<li><a href="#" class="site">Правительство
 			Российской Федерации <span>GOVERMENT.RU</span></a></li>
 			<li><a href="#" class="site">Правительство
@@ -250,7 +251,7 @@
 	<div class="footer__in">
 		<!-- BEGIN  footer__col-->
 		<div class="footer__col">
-			<h3>Разделы сайта Президента России</h3>
+			<h3><a href='#'>Разделы сайта Президента России</a></h3>
 			<ul>
 				<li><a href="#">События</a></li>
 				<li><a href="#">Поездки</a></li>
@@ -274,9 +275,9 @@
 		<!-- END footer__col-->
 		<!-- BEGIN  footer__col-->
 		<div class="footer__col">
-			<h3>Структура портала
+			<h3><a href="#">Структура портала
 Президента
-России</h3>
+России</a></h3>
 			<ul>
 				<li class="footer__currentsite"><a href="#">Президент России <span>Текущий ресурс</a></span></li>
 				<li><a href="#">Структуры при Президенте России</a></li>
@@ -291,9 +292,9 @@
 		<!-- END footer__col-->
 		<!-- BEGIN  footer__col-->
 		<div class="footer__col">
-			<h3>Специальные
+			<h3><a href="#">Специальные
 проекты по
-защите животных</h3>
+защите животных</a></h3>
 			<ul>
 				<li><a href="#">Амурский тигр</a></li>
 				<li><a href="#">Белуха — белый кит</a></li>
@@ -305,9 +306,9 @@
 		<!-- END footer__col-->
 		<!-- BEGIN  footer__col-->
 		<div class="footer__col footer__col_last">
-			<h3>Официальная
+			<h3><a href='#'>Официальная
 и техническая
-информация</h3>
+информация</a></h3>
 			<ul>
 				<li><a href="#">О портале</a></li>
 				<li><a href="#">Об использовании информации с сайта</a></li>
@@ -316,7 +317,7 @@
 			</ul>
 			<div class="footer__license">
 				<i></i>
-				<p>Все опубликованные материалы доступны на условиях свободной публичной лицензииCreative CommonsAttribution 3.0</p>
+				<p>Все опубликованные материалы доступны на условиях свободной публичной лицензии Creative Commons Attribution 3.0</p>
 			</div>
 		</div>
 		<!-- END footer__col-->
@@ -330,14 +331,16 @@
 <!-- end wrapsite -->
 
 <!-- BEGIN  read-->
-<div class="read__wrap">
+<div class="read__wrap scrollable">
 <div class="read__overlay"></div>
 <div class="read">
 	<div class="read__top">
-		<div class="read__text"></div>
-		<div class="read__comments"><span>2</span></div>
-		<div class="read__shares"><span>20</span></div>
-		<div class="read__share"></div>
+		<div class="read__loadarticle is-active"><i></i></div>
+		<div class="read__sep"><i></i></div>
+		<div class="read__loadphoto"><i><span>2</span></i></div>
+		<div class="read__sep"></div>
+		<div class="read__loadvideo"><i><span>20</span></i></div>
+		<div class="read__share"><i></i></div>
 	</div>
 	<div class="read__in">
 		<div class="read__meta">

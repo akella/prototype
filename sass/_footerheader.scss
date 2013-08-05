@@ -13,8 +13,8 @@
 	//@include transition(all .3s ease-in-out);
 	.topline__toggleaside{
 		position: fixed;
-		top: 25px;
-		left: 40px;
+		top: 21px;
+		left: 24px;
 		@include s(togglesidebar);
 		cursor: pointer;
 		z-index: 40;
@@ -30,8 +30,7 @@
 	}
 	.topline__head{
 		float: left;
-		font-size: 18px;
-		@include frank;
+		font-size: 15px;
 		color: #ffffff;
 		position: relative;
 		height: 60px;
@@ -61,9 +60,8 @@
 		}
 	}
 	.topline__nav{
-		@include frank;
 		list-style: none;
-		font-size: 18px;
+		font-size: 15px;
 		li{
 			float: left;
 			margin-right: 23px;
@@ -83,112 +81,6 @@
 	}
 }
 
-.sidenav{
-// 	position: fixed;
-// 	top: 0;
-// 	bottom: 0;
-// 	left: 0;
-	position: absolute;
-	left: 0;
-	width: 320px - 80px;
-	//overflow: auto;
-	background: #091B30;
-	//padding: 75px 40px 20px 40px;
-	//left: -320px;
-	@include transition(left .3s ease-in-out);
-	z-index: 30;
-	display: none;
-	.sidenav__toggle{
-		position: absolute;
-		top: 25px;
-		left: 40px;
-		@include s(togglesidebar);
-		cursor: pointer;
-		z-index: 40;
-		opacity: 1;
-		display: block;
-	}
-	.is-withsidebar &{
-		//left: 0;
-		display: block;
-	}
-	.sidenav__content{
-		padding: 75px 40px 20px 40px;
-		width: 320px - 80px;
-		position: fixed;
-		position: absolute;
-		top: 0;
-		z-index: 50;
-		left: 0;
-		&.is-fixed{
-			position: fixed;
-			top: 0 !important;
-		}
-		&.is-static{
-			position: absolute;
-		}
-	}
-	.sidenav__top{
-		height: 60px;
-		background: #091B30;
-		//background: red;
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 100;
-		width: 320px;
-	}
-	.sidenav__bg{
-		width: 320px;
-		background: #091B30;
-		position: fixed;
-		top: 0;
-		left: 0;
-		bottom: 0;
-	}
-	h3{
-		@include frank;
-		color: #a0afc3;
-		font-size: 19px;
-		font-weight: normal;
-		margin-bottom: 28px;
-	}
-	.sidenav__main{
-		list-style: none;
-		font-size: 16px;
-		margin-bottom: 30px;
-		a{
-			color: #697891;
-			text-decoration: none;
-			&.is-active{
-				color: #FFF;
-			}
-			&:hover{
-				color: #fff;
-			}
-		}
-		li{
-			margin-bottom: 1em;
-		}
-	}
-	.sidenav__subnav{
-		list-style: none;
-		a{
-			font-size: 12px;
-			color: #697891;
-			text-decoration: none;
-			&.is-active{
-				color: #FFF;
-			}
-			&:hover{
-				color: #fff;
-			}
-		}
-		li{
-			margin-bottom: 1em;
-		}
-	}
-}
 .footer{
 	background: #091B30;
 	padding: 50px 0;
@@ -215,9 +107,16 @@
 		@include frank;
 		font-weight: normal;
 		color: #a0afc3;
-		line-height: 1.4;
+		line-height: 1.3;
 		margin-bottom: 30px;
 		margin-right: 24px;
+		a{
+			text-decoration: none;
+			color: #697891;
+			&:hover{
+				color: #c2c6d2;
+			}
+		}
 	}
 	ul{
 		list-style: none;
@@ -244,9 +143,11 @@
 	}
 	.footer__copy{
 		clear: both;
+		position: relative;
+		top: -15px;
 		span{
-			display: block;
-			margin-top: 1em;
+			display: block; 
+			// margin-top: 1em;
 		}
 	}
 	.footer__special{
@@ -256,6 +157,7 @@
 			@include s(special);
 			top: 3px;
 			left: -34px;
+			opacity: .3;
 		}
 	}
 	.footer__license{
@@ -270,28 +172,10 @@
 	.footer__logo{
 		position: absolute;
 		right: 34px;
-		bottom: 50px;
+		// bottom: 50px;
+		bottom: 0;
 		@include s(bigorel);
 
 	}
 }
-body{
-	//@include transition(all .3s ease-in-out);
-	.wrapsite{
-		//@include transition(all .3s ease-in-out);
-	}
-	&.is-withsidebar{
-		//-webkit-transform: translate3d(320px, 0, 0);
-		//padding-left: 320px;
-		margin-left: 320px;
-		.wrapsite{
-			position: relative;
-			//margin-left: 320px;
-			//-webkit-transform: translate3d(320px, 0, 0);
-			//@include transition(all .3s ease-in-out);
-		}
-		.topline{
-			//margin-left: 320px;
-		}
-	}
-}
+
