@@ -1,5 +1,6 @@
 .topline .topline__in, .footer .footer__in, .sites .sites__in, .content .content__in, .promoted .promoted__in { width: 680px; margin-left: 120px; }
 @media only screen and (min-width: 920px) { .topline .topline__in, .footer .footer__in, .sites .sites__in, .content .content__in, .promoted .promoted__in { margin: 0 auto; } }
+@media only screen and (min-width: 1360px) { .is-reading .topline .topline__in, .topline .is-reading .topline__in, .is-reading .footer .footer__in, .footer .is-reading .footer__in, .is-reading .sites .sites__in, .sites .is-reading .sites__in, .is-reading .content .content__in, .content .is-reading .content__in, .is-reading .promoted .promoted__in, .promoted .is-reading .promoted__in { margin-left: 40px; } }
 
 .is-reading { overflow: hidden; }
 @media only screen and (min-width: 1360px) { .is-reading { overflow: auto; } }
@@ -7,6 +8,7 @@
 .read__wrap { position: fixed; top: 100px; bottom: 0; height: auto; right: 0; left: 0; overflow: auto; z-index: 200; display: none; }
 @media only screen and (max-width: 1360px) { .read__wrap { height: auto !important; top: 100px !important; } }
 .is-reading .read__wrap { display: block; }
+@media only screen and (min-width: 1360px) { .is-reading .read__wrap { left: 760px; right: 40px; overflow: auto; } }
 
 .read__overlay { position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 2; background: rgba(0, 0, 0, 0.5); }
 @media only screen and (min-width: 1360px) { .read__overlay { display: none; } }

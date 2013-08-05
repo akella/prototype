@@ -10,6 +10,11 @@
 	// @include r(wide){
 	// 	margin-left: 40px; 
 	// }
+	.is-reading &{
+		@include r(wide){
+			margin-left: 40px;
+		}
+	}
 }
 
 
@@ -38,6 +43,15 @@
 	}
 	.is-reading &{
 		display: block;
+	}
+	.is-reading &{
+		@include r(wide){
+			left: 760px;
+			right: 40px;
+			// bottom: auto;
+			// overflow: visible;
+			overflow: auto;
+		}
 	}
 	// @include r(wide){
 	// 	left: 760px;
