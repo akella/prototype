@@ -1,6 +1,7 @@
 // responsive example, edit or remove
-$break-large: 1360px;
-$break-med: 920px;
+//$break-large: 1360px;
+$break-large: 1560px;
+$break-med: 1160px;
 @mixin r($media) {
 	@if $media == pda {
 		@media only screen and (max-width: $break-small) { @content; }

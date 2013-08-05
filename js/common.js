@@ -80,13 +80,13 @@ $(document).ready(function() {
 		readwrap.css("height",newheight);
 	}
 	// prevent scroll of a page
-	$( '.scrollable' ).
-    bind( 'mousewheel DOMMouseScroll', function (e) {
-        var delta = e.wheelDelta || -e.detail || e.originalEvent.wheelDelta;
-        this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-        console.log(delta);
-        e.preventDefault();
-    });
+	// $( '.scrollable' ).
+ //    bind( 'mousewheel DOMMouseScroll', function (e) {
+ //        var delta = e.wheelDelta || -e.detail || e.originalEvent.wheelDelta;
+ //        this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+ //        console.log(delta);
+ //        e.preventDefault();
+ //    });
 
 	function setwideclass(){
 		if($(window).width()>1360){

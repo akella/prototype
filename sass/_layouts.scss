@@ -3,18 +3,18 @@
 // site layout
 %in{
 	width: 680px;
-	margin-left: 120px;
-	@include r(med){
-		margin: 0 auto;
-	}
+	margin-left: 240px;
+	// @include r(med){
+	// 	margin: 0 auto;
+	// } 
 	// @include r(wide){
 	// 	margin-left: 40px; 
 	// }
-	.is-reading &{
-		@include r(wide){
-			margin-left: 40px;
-		}
-	}
+	// .is-reading &{
+	// 	@include r(wide){
+	// 		margin-left: 40px;
+	// 	}
+	// }
 }
 
 
@@ -25,6 +25,7 @@
 	overflow: hidden;
 	@include r(wide){
 		overflow: auto;
+		overflow-x: hidden;
 	}
 }
 .read__wrap{
@@ -46,7 +47,7 @@
 	}
 	.is-reading &{
 		@include r(wide){
-			left: 760px;
+			left: 760px + 120px + 80px; 
 			right: 40px;
 			// bottom: auto;
 			// overflow: visible;

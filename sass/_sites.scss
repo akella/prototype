@@ -28,15 +28,16 @@
 		}
 	}
 	.site{
-		width: 320px - 27px - 27px;
-		height: 180px - 12px - 12px;
+		width: 320px - 27px - 30px;
+		height: 180px - 22px - 12px;
+		padding: 22px 27px 12px 30px;
 		margin-right: 40px;
 		margin-bottom: 40px;
 		float: left;
 		background: #fff;
-		padding: 12px 27px;
+		
 		text-decoration: none;
-		font-size: 23px;
+		font-size: 20px;
 		color: #697891;
 		@include frank();
 		line-height: 1.2;
