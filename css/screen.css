@@ -11,9 +11,9 @@
 .read__overlay { position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 2; background: rgba(0, 0, 0, 0.5); }
 @media only screen and (min-width: 1560px) { .read__overlay { display: none; } }
 
-.read { width: 680px; position: relative; z-index: 10; min-width: 560px; margin-left: 120px; margin-top: 10px; margin-bottom: 10px; }
-@media only screen and (min-width: 1160px) { .read { margin: 0 auto; } }
-@media only screen and (min-width: 1560px) { .read { width: auto; } }
+.read { width: 680px; position: relative; z-index: 10; min-width: 560px; margin-left: 240px; margin-bottom: 10px; }
+@media only screen and (min-width: 1160px) { .read { margin-left: 240px; } }
+@media only screen and (min-width: 1560px) { .read { width: auto; margin-left: 0; } }
 
 @font-face { font-family: 'franklingothicdemicmpcregular'; src: url("fonts/franklingothicdemicmpc-webfont.eot"); src: url("fonts/franklingothicdemicmpc-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/franklingothicdemicmpc-webfont.woff") format("woff"), url("fonts/franklingothicdemicmpc-webfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 
