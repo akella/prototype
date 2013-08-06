@@ -201,26 +201,28 @@
 	}
 }
 .materials{
-	margin: 1em 0 !important;
+	margin: 0 0 1em 0 !important;
 	padding: 0;
 	list-style: none !important; 
 	width: 50%;
 	li{
-		border-bottom: #aaafb6;
 		border-bottom: 1px solid #E8E8EC;
 		position: relative; 
+		&:last-child{
+			border-bottom: none;
+		}
 	}
 	i{
 		position: absolute;
 		right: 0;
-		top: 15px;
+		top: 17px;
 		@include s(clip);
-		display: inline-block;
+		display: inline-block; 
 	}
 	a{
 		display: block;
 		text-decoration: none;
-		color: #aaafb6;
+		color: #aaafb6; 
 		font-size: 15px;
 		padding: 15px 15px 15px 0;
 		@include condbold;
