@@ -62,8 +62,9 @@ $(document).ready(function() {
 				}
 				else{ // at middle
 					newtop = curpos + margintop;
-					newheight = wh - newtop + curpos - marginbot;
+					
 					newtop = header + margintop;
+					newheight = wh - newtop - marginbot;
 				}
 				// we are at bottom
 				if(curpos+wh  - 20> fTop){
