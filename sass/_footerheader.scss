@@ -2,7 +2,7 @@
 	padding-top: 60px;
 }
 .topline{
-	background: #0E2B4D;
+	background: #051941;
 	height: 60px;
 	position: fixed;
 	top: 0;
@@ -83,10 +83,10 @@
 }
 
 .footer{
-	background: #091B30;
+	background: #03112E;
 	padding: 50px 0;
 	font-size: 12px;
-	color: #697891;
+	color: #68718b;
 	line-height: 1.4;
 	.footer__in{
 		@extend %in;
@@ -113,7 +113,7 @@
 		margin-right: 24px;
 		a{
 			text-decoration: none;
-			color: #697891;
+			color: #68718b;
 			&:hover{
 				color: #c2c6d2;
 			}
