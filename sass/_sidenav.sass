@@ -1,0 +1,115 @@
+$sidenav: 240px
+
+.sidenav
+	// 	position: fixed;
+	// 	top: 0;
+	// 	bottom: 0;
+	// 	left: 0;
+	position: absolute
+	left: 0
+	width: $sidenav
+	//overflow: auto;
+	background: #545460
+	//padding: 75px 40px 20px 40px;
+	//left: -320px;
+	+transition(left 0.3s ease-in-out)
+	z-index: 30
+	display: none
+	.sidenav__toggle
+		position: fixed
+		top: 0
+		left: 0
+		width: 60px
+		height: 60px
+		cursor: pointer
+		z-index: 40
+		opacity: 1
+		display: block
+		i
+			position: absolute
+			top: 21px
+			left: 24px
+			+s(togglesidebar)
+	.is-withsidebar &
+		//left: 0;
+		display: block
+	.sidenav__content
+		padding: 75px 24px 20px 24px
+		width: $sidenav - 48px
+		position: fixed
+		position: absolute
+		top: 0
+		z-index: 50
+		left: 0
+		&.is-fixed
+			position: fixed
+			top: 0 !important
+		&.is-static
+			position: absolute
+	.sidenav__top
+		height: 60px
+		background: #545460
+		//background: red;
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 100
+		width: $sidenav
+	.sidenav__bg
+		width: $sidenav
+		background: #545460
+		position: fixed
+		top: 0
+		left: 0
+		bottom: 0
+	h3
+		+condbold
+		color: #fff
+		font-size: 16px
+		font-weight: normal
+		margin-bottom: 21px
+	ul
+		margin: 0 -24px 22px -24px
+		padding: 0 24px 4px 24px
+		border-bottom: 1px solid  #73737C
+		list-style: none
+		font-size: 12px
+		a
+			color: #fff
+			text-decoration: none
+			&.is-active
+				color: #FFF
+			&:hover
+				color: #fff
+			span
+				color: #c2c6d2
+				display: block
+		li
+			margin-bottom: 1.2em
+		&:last-child
+			border-bottom: none
+	.sidenav__special
+		position: relative
+		i
+			position: absolute
+			+s(special)
+			top: 3px
+			left: -34px
+	.sidenav__pre
+		padding-left: 38px + 24px
+
+body
+	//@include transition(all .3s ease-in-out);
+	.wrapsite
+		//@include transition(all .3s ease-in-out);
+	&.is-withsidebar
+		//-webkit-transform: translate3d(320px, 0, 0);
+		//padding-left: 320px;
+		//margin-left: $sidenav; !!!
+		.wrapsite
+			position: relative
+			//margin-left: 320px;
+			//-webkit-transform: translate3d(320px, 0, 0);
+			//@include transition(all .3s ease-in-out);
+		.topline
+			//margin-left: 320px;

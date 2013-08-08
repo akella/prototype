@@ -1,13 +1,28 @@
 $(document).ready(function() {
 
-	
+	$('.search__dots, .topline__search').click(function (e) {
+		$('.topline').toggleClass('is-withsearch');
+	});
 
 
 	// ===============================================================
 	// ===========================TEST================================
 	// ===============================================================
 	$('.hentry,.read__overlay').click(function (e) {
-		$('body').toggleClass('is-reading');
+		b = $('body');
+		
+		if(b.hasClass('is-reading')){
+			fromtop = $('.wrapsite').css('top').substring(1);
+			fromtop = fromtop.slice(0, -2);
+			$('.wrapsite').css('top', 'auto');
+			$('body').removeClass('is-reading');
+			$(window).scrollTop(fromtop);
+		}
+		else{
+			$('.wrapsite').css('top', -($(window).scrollTop()));
+			$('body').addClass('is-reading');
+		}
+
 	});
 	$('.promoted__toggle').click(function (e) {
 		$('.promoted').toggleClass('is-collapsed').afterTransition(function(){
@@ -41,7 +56,7 @@ $(document).ready(function() {
 	hh = 60;
 	ph  = promoted.height();
 	bh = $(document).height();
-	margintop = 70;
+	margintop = 40;
 	marginbot = 10;
 	topareah = hh + ph;
 
