@@ -82,16 +82,16 @@ a img, fieldset { border: none; }
 .footer .footer__license i { display: inline-block; background: url('../img/icons-s7e4ee78c83.png') 0 -543px no-repeat; width: 16px; height: 16px; margin-bottom: 8px; display: inline-block; }
 .footer .footer__logo { position: absolute; right: 34px; bottom: 0; background: url('../img/icons-s7e4ee78c83.png') 0 0 no-repeat; width: 128px; height: 129px; }
 
-.sidenav { position: absolute; left: 0; width: 240px; background: #545460; -webkit-transition: left 0.3s ease-in-out; -moz-transition: left 0.3s ease-in-out; -ms-transition: left 0.3s ease-in-out; -o-transition: left 0.3s ease-in-out; transition: left 0.3s ease-in-out; z-index: 30; display: none; }
-.sidenav .sidenav__toggle { position: fixed; top: 0; left: 0; width: 66px; height: 60px; cursor: pointer; z-index: 40; opacity: 1; display: block; }
+.sidenav { position: fixed; top: 0; bottom: 0; left: -240px; width: 240px; background: #545460; -webkit-transition: left 0.3s ease-in-out; -moz-transition: left 0.3s ease-in-out; -ms-transition: left 0.3s ease-in-out; -o-transition: left 0.3s ease-in-out; transition: left 0.3s ease-in-out; z-index: 30; }
+.sidenav .sidenav__toggle { position: absolute; top: 0; left: 0; width: 66px; height: 60px; cursor: pointer; z-index: 40; opacity: 1; display: block; }
 .sidenav .sidenav__toggle i { position: absolute; top: 21px; left: 24px; background: url('../img/icons-s7e4ee78c83.png') 0 -945px no-repeat; width: 18px; height: 18px; }
 .is-withsidebar .sidenav { display: block; }
-.sidenav .sidenav__content { padding: 75px 24px 20px 24px; width: 192px; position: fixed; position: absolute; top: 0; z-index: 50; left: 0; bottom: 0; overflow: auto; position: fixed; top: 0; }
+.sidenav .sidenav__content { padding: 75px 24px 20px 24px; width: 192px; top: 0; z-index: 50; left: 0; bottom: 0; overflow: auto; position: absolute; top: 0; }
 .sidenav .sidenav__content.is-static { position: absolute; }
-.sidenav .sidenav__top { height: 60px; background: #545460; position: fixed; top: 0; left: 0; z-index: 100; width: 240px; }
+.sidenav .sidenav__top { height: 60px; background: #545460; position: absolute; top: 0; left: 0; z-index: 100; width: 240px; }
 .sidenav .sidenav__bg { width: 240px; background: #545460; position: fixed; top: 0; left: 0; bottom: 0; }
 .sidenav h3 { font-family: "gcondbold", arial, sans-serif; color: white; font-size: 16px; font-weight: normal; margin-bottom: 21px; }
-.sidenav ul { margin: 0 -24px 22px -24px; padding: 0 24px 4px 24px; border-bottom: 1px solid #73737c; list-style: none; font-size: 12px; }
+.sidenav ul { margin: 0 -24px 22px -24px; padding: 0 24px 4px 24px; border-bottom: 1px solid #73737c; list-style: none; font-size: 12px; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 .sidenav ul a { color: white; text-decoration: none; }
 .sidenav ul a.is-active { color: white; }
 .sidenav ul a:hover { color: white; }
@@ -101,6 +101,12 @@ a img, fieldset { border: none; }
 .sidenav .sidenav__special { position: relative; }
 .sidenav .sidenav__special i { position: absolute; background: url('../img/icons-s7e4ee78c83.png') 0 -715px no-repeat; width: 13px; height: 9px; top: 3px; left: -34px; }
 .sidenav .sidenav__pre { padding-left: 62px; }
+
+body { -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
+body .wrapsite, body .topline, body .read__wrap { -webkit-transition: left 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; -moz-transition: left 0.3s ease-in-out, -moz-transform 0.3s ease-in-out; -ms-transition: left 0.3s ease-in-out, -ms-transform 0.3s ease-in-out; -o-transition: left 0.3s ease-in-out, -o-transform 0.3s ease-in-out; transition: left 0.3s ease-in-out, transform 0.3s ease-in-out; }
+body.is-withsidebar .sidenav { left: 0; }
+body.is-withsidebar .topline__toggleaside { display: none; }
+body.is-withsidebar .wrapsite, body.is-withsidebar .topline, body.is-withsidebar .read__wrap { -webkit-transition: left 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; -moz-transition: left 0.3s ease-in-out, -moz-transform 0.3s ease-in-out; -ms-transition: left 0.3s ease-in-out, -ms-transform 0.3s ease-in-out; -o-transition: left 0.3s ease-in-out, -o-transform 0.3s ease-in-out; transition: left 0.3s ease-in-out, transform 0.3s ease-in-out; -webkit-transform: translate3d(240px, 0, 0); -moz-transform: translate3d(240px, 0, 0); -ms-transform: translate3d(240px, 0, 0); -o-transform: translate3d(240px, 0, 0); transform: translate3d(240px, 0, 0); }
 
 .sites { background: #f0eeef; padding-top: 40px; }
 .sites ul { list-style: none; margin-right: -60px; }
