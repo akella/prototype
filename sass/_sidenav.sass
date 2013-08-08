@@ -19,7 +19,7 @@ $sidenav: 240px
 		position: fixed
 		top: 0
 		left: 0
-		width: 60px
+		width: 66px
 		height: 60px
 		cursor: pointer
 		z-index: 40
@@ -41,9 +41,11 @@ $sidenav: 240px
 		top: 0
 		z-index: 50
 		left: 0
-		&.is-fixed
-			position: fixed
-			top: 0 !important
+		bottom: 0
+		overflow: auto 
+		// &.is-fixed
+		position: fixed
+		top: 0
 		&.is-static
 			position: absolute
 	.sidenav__top
@@ -107,7 +109,7 @@ body
 		//padding-left: 320px;
 		//margin-left: $sidenav; !!!
 		.wrapsite
-			position: relative
+			//position: relative
 			//margin-left: 320px;
 			//-webkit-transform: translate3d(320px, 0, 0);
 			//@include transition(all .3s ease-in-out);

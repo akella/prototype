@@ -1,13 +1,15 @@
 $(document).ready(function() {
-
+	// header search
 	$('.search__dots, .topline__search').click(function (e) {
 		$('.topline').toggleClass('is-withsearch');
+		return false
 	});
 
 
 	// ===============================================================
 	// ===========================TEST================================
 	// ===============================================================
+	//opening read in narrow
 	$('.hentry,.read__overlay').click(function (e) {
 		b = $('body');
 		
@@ -57,8 +59,10 @@ $(document).ready(function() {
 	ph  = promoted.height();
 	bh = $(document).height();
 	margintop = 40;
-	marginbot = 10;
+	marginbot = 40;
 	topareah = hh + ph;
+	newtop = 0;
+	newheight = 0;
 
 	// ===============================================================
 	// ===========================READ POSITION=======================
@@ -68,38 +72,40 @@ $(document).ready(function() {
 			curpos = $(window).scrollTop(); //current screen scroll from top
 			wh = $(window).height(); //window height
 
-			newheight = 300;
 			if($('.promoted').hasClass('is-collapsed')){
-				topareah = 120;
+				topareah = 160 - 45;
 			}
 			else{
 				topareah = 240;
 			}
+			//console.log(curpos);
 				//determine top and height
-				if(curpos < topareah ){ // we are at top
-					newtop = topareah + margintop;
-					newheight = wh - newtop + curpos - marginbot;
+				if(curpos < topareah - 55 ){ // we are at top
+					//newtop = topareah + margintop;
+					newheight = wh - newtop - marginbot;
 					newtop = topareah + margintop - curpos;
 					//console.log(newheight);
+					console.log('header');
 
 				}
 				else{ // at middle
-					newtop = curpos + margintop;
+					console.log('middle');
+					//newtop = curpos + margintop;
 					
-					newtop = header + margintop;
+					newtop = hh + margintop;
 					newheight = wh - newtop - marginbot;
 				}
 				// we are at bottom
-				if(curpos+wh  - 20> fTop){
-					newheight = fTop - curpos - marginbot - margintop + 20;
+				if(curpos+wh> fTop){
+					console.log('footer');
+					newheight = fTop - curpos - marginbot - margintop - 60;
 				}
-			// set
-			
 		}
 		else{
 			newtop = 0;
 			newheight = 'auto';
 		}
+		// set
 		readwrap.css("top",newtop);
 		readwrap.css("height",newheight);
 	}
@@ -113,7 +119,7 @@ $(document).ready(function() {
  //    });
 
 	function setwideclass(){
-		if($(window).width()>1360){
+		if($(window).width()>1480){
 			body.addClass('is-wide');
 		}
 		else{
@@ -133,34 +139,34 @@ $(document).ready(function() {
 	// ==================================================================
 	$('.topline__toggleaside,.sidenav__toggle').click(function (e) {
 		$('body').toggleClass('is-withsidebar');
-		curpos = $(window).scrollTop();
-		if(curpos>0){
-			side.css('top', curpos).removeClass('is-fixed');
-		}
+		// curpos = $(window).scrollTop();
+		// if(curpos>0){
+		// 	side.css('top', curpos).removeClass('is-fixed');
+		// }
 	});
 	//sidebar fixed
-	(function () {
-		var previousScroll = 0;
-		$(window).scroll(function(){
-		   var currentScroll = $(this).scrollTop();
-		   if(currentScroll>100){
-			if (currentScroll > previousScroll){
-				//going down
-				   if(side.hasClass('is-fixed')){
-					console.log('removing fix');
-					side.removeClass('is-fixed').css('top', currentScroll);
-				   }
-			} else {
-				//going up
-				//console.log('up');
-				if(!(side.hasClass('is-fixed')) && currentScroll < side.offset().top){
-					side.addClass('is-fixed');
-				}
-			}
-			previousScroll = currentScroll;
-		   }
-		});
-	}()); //run this anonymous function immediately
+	// (function () {
+	// 	var previousScroll = 0;
+	// 	$(window).scroll(function(){
+	// 	   var currentScroll = $(this).scrollTop();
+	// 	   if(currentScroll>100){
+	// 		if (currentScroll > previousScroll){
+	// 			//going down
+	// 			   if(side.hasClass('is-fixed')){
+	// 				console.log('removing fix');
+	// 				side.removeClass('is-fixed').css('top', currentScroll);
+	// 			   }
+	// 		} else {
+	// 			//going up
+	// 			//console.log('up');
+	// 			if(!(side.hasClass('is-fixed')) && currentScroll < side.offset().top){
+	// 				side.addClass('is-fixed');
+	// 			}
+	// 		}
+	// 		previousScroll = currentScroll;
+	// 	   }
+	// 	});
+	// }()); //run this anonymous function immediately
 
 
 	// all of this for wide screen only

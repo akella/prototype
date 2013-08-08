@@ -3,24 +3,20 @@
 // site layout
 %in
 	width: 680px
-	margin-left: 240px
-	// @include r(med){
-	// 	margin: 0 auto;
-	// } 
-	// @include r(wide){
-	// 	margin-left: 40px; 
-	// }
-	// .is-reading &{
-	// 	@include r(wide){
-	// 		margin-left: 40px;
-	// 	}
-	// }
+	padding-left: 160px
+	margin: 0 auto 
+	.is-reading &
+		+r(wide)
+			margin-left: 0 
+
 
 // reader layout
 .is-reading
 	//overflow: hidden
 	.wrapsite
-		position: fixed
+		+r(notwide)
+			position: fixed
+			width: 100% 
 	+r(wide)
 		overflow: auto
 		overflow-x: hidden
@@ -28,6 +24,7 @@
 .read__wrap
 	// position: fixed
 	// top: 100px 
+	min-width: 840px 
 	bottom: 0
 	height: auto
 	right: 0
@@ -38,15 +35,17 @@
 	+r(notwide)
 		height: auto !important
 		top: 100px !important
-
 	.is-reading &
 		display: block
 		+r(wide)
-			left: 760px + 120px + 80px
+			left: 840px + 40px
+			position: fixed
 			right: 40px
+			overflow: auto
+			min-width: 0 
+			max-width: 760px 
 			// bottom: auto;
 			// overflow: visible;
-			overflow: auto
 	// @include r(wide){
 	// 	left: 760px;
 	// 	right: 40px;
@@ -73,13 +72,15 @@
 	z-index: 10
 	min-width: 560px
 	//max-width: 760px;
-	margin-left: 240px
+	margin: 0 auto
+	left: 80px 
 	//margin-top: 10px;
-	margin-bottom: 10px
+	margin-bottom: 40px
 	+r(med)
 		//margin: 0 auto;
-		margin-left: 240px
-
+		//margin-left: 240px
 	+r(wide)
 		width: auto
 		margin-left: 0
+		margin-bottom: 0 
+		left: 0 
