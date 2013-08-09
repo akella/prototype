@@ -32,7 +32,7 @@ button::-moz-focus-inner { padding: 0; border: 0; }
 
 input[type="submit"]::-moz-focus-inner { padding: 0; border: 0; }
 
-body { font-family: "gregu", arial, sans-serif; line-height: 1.4; }
+body { font-family: "gregu", arial, sans-serif; line-height: 1.4; background: #545460; }
 
 a img, fieldset { border: none; }
 
