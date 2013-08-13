@@ -1,6 +1,7 @@
 .sites
 	background: #F0EEEF
 	padding-top: 40px
+	+transition(all .3s linear)
 	ul
 		list-style: none
 		margin-right: -60px
@@ -19,6 +20,7 @@
 		+transition(all 0.3s ease-in-out)
 		position: relative
 	&.is-expanded
+		padding-bottom: 1px 
 		.sites__in
 			height: 900px
 			overflow: visible

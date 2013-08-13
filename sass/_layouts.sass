@@ -16,7 +16,7 @@
 	.wrapsite
 		+r(notwide)
 			position: fixed
-			width: 100% 
+			width: 100%
 	+r(wide)
 		overflow: auto
 		overflow-x: hidden
@@ -30,13 +30,18 @@
 	right: 0
 	left: 0
 	overflow: auto
-	z-index: 200
-	display: none
+	position: relative
+	z-index: -1
+	opacity: 0 
+	margin-top: -15px 
 	+r(notwide)
 		height: auto !important
-		top: 100px !important
+		top: 0 !important
 	.is-reading &
-		display: block
+		opacity: 1 
+		z-index: 200 
+		+transition(margin .3s ease-in-out,opacity .3s ease-in-out)
+		margin-top: 0 
 		+r(wide)
 			left: 840px + 40px
 			position: fixed
@@ -55,7 +60,7 @@
 	// }
 
 .read__overlay
-	position: fixed
+	position: absolute
 	top: 60px
 	left: 0
 	bottom: 0

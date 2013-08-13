@@ -24,6 +24,7 @@ $(document).ready(function() {
 			$('.wrapsite').css('top', -($(window).scrollTop()));
 			$('body').addClass('is-reading');
 		}
+		return false;
 
 	});
 	$('.promoted__toggle').click(function (e) {
@@ -36,7 +37,10 @@ $(document).ready(function() {
 		e.stopPropagation();
 	});
 	$('.sites').click(function (e) {
-		$(this).addClass('is-expanded');
+		$(this).addClass('is-expanded').afterTransition(function(){
+			setpopup();
+			//alert('a');
+		});
 	});
 
 	// ===============================================================
@@ -68,6 +72,7 @@ $(document).ready(function() {
 	// ===========================READ POSITION=======================
 	// ===============================================================
 	function setpopup(){
+		fTop = footer.offset().top;
 		if(body.hasClass('is-wide')){
 			curpos = $(window).scrollTop(); //current screen scroll from top
 			wh = $(window).height(); //window height
@@ -78,12 +83,14 @@ $(document).ready(function() {
 			else{
 				topareah = 240;
 			}
+
 			//console.log(curpos);
 				//determine top and height
 				if(curpos < topareah - 55 ){ // we are at top
 					//newtop = topareah + margintop;
-					newheight = wh - newtop - marginbot;
+					
 					newtop = topareah + margintop - curpos;
+					newheight = wh - newtop - marginbot;
 					//console.log(newheight);
 					console.log('header');
 
