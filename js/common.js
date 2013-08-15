@@ -144,7 +144,7 @@ $(document).ready(function() {
 	// ==================================================================
 	// ===========================SIDENAV================================
 	// ==================================================================
-	$('.topline__toggleaside,.sidenav__toggle').click(function (e) {
+	$('.topline__toggleaside,.sidenav__toggle, .sidenavoverlay').click(function (e) {
 		$('body').toggleClass('is-withsidebar');
 		// curpos = $(window).scrollTop();
 		// if(curpos>0){
