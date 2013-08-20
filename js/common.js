@@ -103,10 +103,10 @@ $(document).ready(function() {
 					newheight = wh - newtop - marginbot;
 				}
 				// we are at bottom
-				if(curpos+wh> fTop){
-					console.log('footer');
-					newheight = fTop - curpos - marginbot - margintop - 60;
-				}
+				// if(curpos+wh> fTop){
+				// 	console.log('footer');
+				// 	newheight = fTop - curpos - marginbot - margintop - 60;
+				// }
 		}
 		else{
 			newtop = 0;
